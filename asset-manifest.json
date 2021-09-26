@@ -1,23 +1,20 @@
 {
   "files": {
-    "main.css": "/color-picker/static/css/main.9f545490.chunk.css",
-    "main.js": "/color-picker/static/js/main.63fce897.chunk.js",
-    "main.js.map": "/color-picker/static/js/main.63fce897.chunk.js.map",
+    "main.css": "/color-picker/static/css/main.292ca522.chunk.css",
+    "main.js": "/color-picker/static/js/main.2fa7c9cb.chunk.js",
+    "main.js.map": "/color-picker/static/js/main.2fa7c9cb.chunk.js.map",
     "runtime-main.js": "/color-picker/static/js/runtime-main.7cda6ac3.js",
     "runtime-main.js.map": "/color-picker/static/js/runtime-main.7cda6ac3.js.map",
-    "static/css/2.0975cee1.chunk.css": "/color-picker/static/css/2.0975cee1.chunk.css",
-    "static/js/2.c70c3714.chunk.js": "/color-picker/static/js/2.c70c3714.chunk.js",
-    "static/js/2.c70c3714.chunk.js.map": "/color-picker/static/js/2.c70c3714.chunk.js.map",
+    "static/js/2.41726458.chunk.js": "/color-picker/static/js/2.41726458.chunk.js",
+    "static/js/2.41726458.chunk.js.map": "/color-picker/static/js/2.41726458.chunk.js.map",
     "index.html": "/color-picker/index.html",
-    "static/css/2.0975cee1.chunk.css.map": "/color-picker/static/css/2.0975cee1.chunk.css.map",
-    "static/css/main.9f545490.chunk.css.map": "/color-picker/static/css/main.9f545490.chunk.css.map",
-    "static/js/2.c70c3714.chunk.js.LICENSE.txt": "/color-picker/static/js/2.c70c3714.chunk.js.LICENSE.txt"
+    "static/css/main.292ca522.chunk.css.map": "/color-picker/static/css/main.292ca522.chunk.css.map",
+    "static/js/2.41726458.chunk.js.LICENSE.txt": "/color-picker/static/js/2.41726458.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7cda6ac3.js",
-    "static/css/2.0975cee1.chunk.css",
-    "static/js/2.c70c3714.chunk.js",
-    "static/css/main.9f545490.chunk.css",
-    "static/js/main.63fce897.chunk.js"
+    "static/js/2.41726458.chunk.js",
+    "static/css/main.292ca522.chunk.css",
+    "static/js/main.2fa7c9cb.chunk.js"
   ]
 }
