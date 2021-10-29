@@ -10,7 +10,7 @@ const TwoColorCombination = () => {
     <Wrap>
       <Home
         code={"Color Combination Code "}
-        link={"/My-favourite-color-combination"}
+        link={"/"}
         link3={"/Gradients"}
         link4={"/TwoColorCombination"}
       />

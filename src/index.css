@@ -12,3 +12,7 @@ body {
 code {
   font-family: "Poppins", sans-serif;
 }
+
+.red {
+  background: blue;
+}

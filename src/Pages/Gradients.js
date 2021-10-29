@@ -1,16 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Data from "./Data";
 import Home from "../Components/Home";
+import GradientPopup from "../Components/GradientDataPopup";
 
 const Gradients = () => {
   const value = Data.slice(0, 10);
+  const [ButtonPopup, setButtonPopup] = useState(false);
+
+  const Display = () => {
+    setButtonPopup(true);
+    setTimeout(() => {
+      setButtonPopup(false);
+    }, 1000);
+  };
+
   return (
     <Wrap>
       <Home
         code={"Color Combination Code "}
-        link={"/My-favourite-color-combination"}
+        link={"/"}
         link3={"/Gradients"}
         link4={"/TwoColorCombination"}
       />
@@ -37,9 +47,15 @@ const Gradients = () => {
                   style={{
                     backgroundImage: `linear-gradient(to bottom, ${element.Gradients1}, ${element.Gradients2})`,
                   }}
+                  onClick={Display}
                 >
                   <div>{element.Gradients1}</div>
                   {element.Gradients2}
+                  <GradientPopup
+                    trigger={ButtonPopup}
+                    setTrigger={setButtonPopup}
+                    Color1={element.Gradients1}
+                  ></GradientPopup>
                 </Button>
               </CopyToClipboard>
               <CopyToClipboard text={element.Gradients1}>

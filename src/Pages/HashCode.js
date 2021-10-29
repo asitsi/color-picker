@@ -4,27 +4,24 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import Data from "./Data";
 import Home from "../Components/Home";
 import Popup from "../Components/Popup";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 const HashCode = () => {
   const value = Data;
+  const [Copyed, setCopyed] = useState("");
   const [ButtonPopup, setButtonPopup] = useState(false);
 
-  const OnCoped = () => {
-    toast.success("Copied", {
-      position: "top-right",
-      autoClose: 2000,
-      theme: "colored",
-    });
+  const popupcall = () => {
+    const timer = setTimeout(() => {
+      setCopyed(`copyed <i class="fas fa-check-circle"></i>`);
+    }, 1000);
+    return () => clearTimeout(timer);
   };
 
   return (
     <Wrap>
-      <ToastContainer />
       <Home
         code={"Code"}
-        link={"/My-favourite-color-combination"}
+        link={"/"}
         link3={"/Gradients"}
         link4={"/TwoColorCombination"}
       />
@@ -35,20 +32,30 @@ const HashCode = () => {
               <Button
                 type="button"
                 style={{ background: `${element.HEXCode}` }}
-                onClick={() => setButtonPopup(index)}
+                onClick={() => {
+                  setButtonPopup(index);
+                }}
               >
                 {element.HEXCode}
               </Button>
               <Popup
                 trigger={ButtonPopup === index}
                 setTrigger={setButtonPopup}
+                setCopyed={setCopyed}
+                Color={element.HEXCode}
                 className="Popup"
               >
+                <h1
+                  style={{
+                    color: `${element.RGBACode}`,
+                  }}
+                  dangerouslySetInnerHTML={{ __html: `${Copyed}` }}
+                ></h1>
                 <CopyToClipboard text={element.HEXCode}>
                   <StyledButton
                     type="btn"
                     color={element.HEXCode}
-                    onClick={OnCoped}
+                    onClick={() => popupcall()}
                   >
                     HEX Code {element.HEXCode}
                   </StyledButton>
@@ -57,7 +64,7 @@ const HashCode = () => {
                   <StyledButton
                     type="btn"
                     color={element.HEXCode}
-                    onClick={OnCoped}
+                    onClick={popupcall}
                   >
                     {element.RGBACode}
                   </StyledButton>
@@ -98,8 +105,6 @@ const Content = styled.div`
 
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 2rem;
-    grid-row-gap: 1.5rem;
     width: 100%;
   }
 `;
@@ -131,7 +136,7 @@ const Button = styled.button`
     width: 150px;
   }
   @media (max-width: 400px) {
-    width: 120px;
+    width: 140px;
     padding: 0 1rem;
   }
   @media (max-width: 300px) {
@@ -143,7 +148,7 @@ const StyledButton = styled.button`
   display: block;
   padding: 1rem;
   margin: 2rem 1rem;
-  width: 90%;
+  width: 96%;
   border-radius: 5px;
   background-color: ${(props) => props.color};
   color: white;
@@ -151,4 +156,7 @@ const StyledButton = styled.button`
   cursor: pointer;
   font-size: 1.5rem;
   font-family: "Poppins", sans-serif;
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 `;
