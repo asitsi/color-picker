@@ -49,13 +49,16 @@ const Gradients = () => {
                   }}
                   onClick={Display}
                 >
-                  <div>{element.Gradients1}</div>
+                  
                   
                   <GradientPopup
                     trigger={ButtonPopup}
                     setTrigger={setButtonPopup}
                     Color1={element.Gradients1}
-                  >{element.Gradients2}</GradientPopup>
+                  >
+                   <div>{element.Gradients1}</div>
+                   {element.Gradients2}
+                  </GradientPopup>
                 </Button>
               </CopyToClipboard>
               <CopyToClipboard text={element.Gradients1}>
