@@ -51,12 +51,12 @@ const Gradients = () => {
                 >
                   
                    <div>{element.Gradients1}</div>
-                   {element.Gradients2}
+                   
                   <GradientPopup
                     trigger={ButtonPopup}
                     setTrigger={setButtonPopup}
                     Color1={element.Gradients1}
-                  ></GradientPopup>
+                  >{element.Gradients2}</GradientPopup>
                 </Button>
               </CopyToClipboard>
               <CopyToClipboard text={element.Gradients1}>
