@@ -4,14 +4,18 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import Data from "./Data";
 import Home from "../Components/Home";
 import Popup from "../Components/Popup";
+import { CircularProgress } from "@mui/material";
 
 const HashCode = () => {
   const value = Data;
   const [Copyed, setCopyed] = useState("");
   const [ButtonPopup, setButtonPopup] = useState(false);
+  const [Display, setDisplay] = useState("none");
 
   const popupcall = () => {
+    setDisplay("block");
     const timer = setTimeout(() => {
+      setDisplay("none");
       setCopyed(`copyed <i class="fas fa-check-circle"></i>`);
     }, 1000);
     return () => clearTimeout(timer);
@@ -45,6 +49,18 @@ const HashCode = () => {
                 Color={element.HEXCode}
                 className="Popup"
               >
+                <h1
+                  style={{
+                    display: `${Display}`,
+                  }}
+                >
+                  <CircularProgress
+                    style={{
+                      color: `${element.RGBACode}`,
+                    }}
+                    thickness="5"
+                  />
+                </h1>
                 <h1
                   style={{
                     color: `${element.RGBACode}`,
