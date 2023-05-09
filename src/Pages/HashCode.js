@@ -41,7 +41,7 @@ const HashCode = () => {
                 }}
                 rgba={element.RGBACode}
               >
-                {/* {element.HEXCode} */}
+                {element.HEXCode}
               </Button>
               <Popup
                 trigger={ButtonPopup === index}
