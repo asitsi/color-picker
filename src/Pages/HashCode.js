@@ -39,6 +39,7 @@ const HashCode = () => {
                 onClick={() => {
                   setButtonPopup(index);
                 }}
+                rgba={element.RGBACode}
               >
                 {element.HEXCode}
               </Button>
@@ -141,7 +142,7 @@ const Button = styled.button`
   transition: transform 0.5s ease-out;
   :hover {
     transform: translateY(-10px);
-    box-shadow: 5px 10px #999999;
+    box-shadow: ${props => props.rgba.replace(/[^,]+(?=\))/, 0.4)} 0px 5px, ${props => props.rgba.replace(/[^,]+(?=\))/, 0.3)} 0px 10px, ${props => props.rgba.replace(/[^,]+(?=\))/, 0.2)} 0px 15px, ${props => props.rgba.replace(/[^,]+(?=\))/, 0.1)} 0px 20px, ${props => props.rgba.replace(/[^,]+(?=\))/, 0.05)} 0px 25px;
   }
   @media (max-width: 768px) {
     font-size: 1.2rem;
