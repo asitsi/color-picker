@@ -20,7 +20,7 @@ const Gradients = () => {
     <Wrap>
       <Home
         code={"Color Combination Code "}
-        link={"/"}
+        link={"/hash-colors"}
         link3={"/Gradients"}
         link4={"/TwoColorCombination"}
       />
